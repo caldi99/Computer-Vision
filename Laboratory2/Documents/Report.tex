@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} %package to manage images
+\graphicspath{ {./images/} }
+\usepackage{sectsty}
+
+\sectionfont{\LARGE}
+\subsectionfont{\large}
+
+\begin{document}
+\begin{flushleft}
+\section*{Report Lab expierience 2\\ Francesco Caldivezzi \\ ID Number : 2037893}
+
+\subsection*{Experience Gained}
+In this lab I understand how to :
+\begin{itemize}
+  \item Convert an image from one color-scale to another and how to save it tanks to the functions \textbf{cv::cvtColor()} and \textbf{cv::imwrite()}
+  \item Implement a Max and Min filter by myself and understand what is the impact if I apply those on a Image
+  \item How to use median and gaussian filters in openCv thanks to \textbf{cv::GaussianBlur} and \textbf{cv::medianBlur} functions
+  \item How to plot an histogram of an image with the use of the function \textbf{cv::calcHist()} and all the things related to it to plot the actual histogram
+  \item How to normalize an Histogram by using the \textbf{cv::equalizeHist} function
+  \item How CMakeList files works, because it is the first time that I use them due to the fact that on my machine I am using Visual Studio and all such stuff is automatized.
+\end{itemize}
+
+\newpage
+\subsection*{Unexpected Issues}
+The main difficulties of this Lab were :
+\begin{itemize}
+  \item How to actual implement the min/max filters. This was solved by simply trying to work on a simple example.
+  \item How to plot an actual histogram as we are used to see it. This is related to the fact that on the guide of openCv in the example the histogram is not plotted as a buch of rectangles one for each value of the x axis but as the connection of the values assumed for each x value on the y axis. This was solved by understanding what I need to provide to the \textbf{line()} function as shown in the file "task5.cpp"
+\end{itemize}
+
+\newpage
+\subsection*{Results}
+In this section we talk about the experimental results :
+\begin{itemize}
+  \item Task1 : No things worthy to say 
+  \item Task2 : To remove the wires we need to apply a max-filter of 5x5 to not compromise to much the image the result is the following :
+  \includegraphics[scale = 0.35]{images/max_filter5x5.png}
+  \item Task3:\\
+  Gaussian Filter :
+  \includegraphics[scale = 0.35]{images/gaussing_filter_3x3.png}
+  Median Filter :
+  \includegraphics[scale = 0.35]{max_filter5x5}
+  \item Task4:
+  Histogram :
+  \includegraphics[scale = 0.35]{images/histogram.png}\\[7\baselineskip]
+  \item Task5 : \\
+  Image After histogram Equalization :
+  \includegraphics[scale = 0.35]{images/image_after_histogram_equalization.png}
+  Histogram Equalized :
+  \includegraphics[scale = 0.35]{images/histogram_equalized.png}
+  \parsep
+\end{itemize}
+
+\end{flushleft}
+\end{document}
