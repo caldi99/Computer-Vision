@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} %package to manage images
+\graphicspath{ {./images/} }
+\usepackage{sectsty}
+
+\sectionfont{\LARGE}
+\subsectionfont{\large}
+
+\begin{document}
+\begin{flushleft}
+\section*{Report Lab expierience 4\\ Francesco Caldivezzi \\ ID Number : 2037893}
+
+\subsection*{Experience Gained}
+In this lab I understand how to :
+\begin{itemize}
+  \item Use the function \textbf{cv::Canny()} that allows me to detect edges in an image 
+  \item Use \textbf{cv::blur()} to blur an image.
+  \item Use \textbf{cv::createTrackbar()} function that allows me to add one trackbar to a windows displayed.
+  \item Use \textbf{cv::HoughLines()} function to apply Hough transform to an image to detect lines.
+  \item Use \textbf{cv::HoughCircles()} function to apply Hough transform to an image to detect circles.
+  \item Implement my own version of an edge detector, specifically designed for road lines.
+\end{itemize}
+
+\newpage
+\subsection*{Unexpected Issues}
+The main difficulties of this Lab were :
+\begin{itemize}
+  \item Task1 : the main difficulty here, was to be able to implement the callback function of \textbf{cv::createTrackbar()} inside a class. I solved this issue simply by creating a class with static functions one for each callback of track bars that I have added to the window.
+  \item Task2 : the big issue here was in how to implement, actually, a line detector for the lines of the road. I solved this issue by creating a class (RoadLinesDetector) that has a function that apply the following steps :
+    \begin{itemize}
+        \item Blurs the given GRAY SCALE image received.
+        \item Cut off all the pixels below a certain given threshold
+        \item Compute the Absolute gradient along X axis
+        \item Cut off all the pixels below a certain given threshold
+    \end{itemize}
+  \item Task 3 and Task 4: the main problem in these tasks was to tune the parameters in order to detect the lines in the road with the function \textbf{cv::HoughLines()} (Task 3) and to detect the signal in the street with the function \textbf{cv::HoughCircles()} (Task 3)
+  
+  \item An additional problem faced with this lab was that, for the first time, I have had an execution error in the virtual machine but not in my local configuration. The problem was that I was passing to the function \textbf{cv::createTrackbar()} as third parameter (namely the initial value of the trackbar) simply the value 0. Actually if we observe the signature of the method, the parameter is a pointer to an integer value, therefore we have to declare a variable, assign to it a value and then, passing the reference of it to the function. So, with this change I was able to solve the problem. \\
+  Notice that, a possible explanation why I was able to run my code in my local conf. and instead not in the virtual machine,is that, probably, the compiler of visual studio was implicitly translating such quantities to variables, and so everything was working fine.
+\end{itemize}
+
+\newpage
+\subsection*{Results}
+In this section we talk about the experimental results :
+\begin{itemize}
+  \item Task1 : 
+  The Reference Image:
+  \includegraphics[scale = 0.35]{images/Reference_Image.PNG}\\
+  The Application of : \textbf{cv::Canny()} and \textbf{cv::blur()} to the reference image:
+  \includegraphics[scale = 0.35]{images/Result_Of_Canny.PNG}\\
+  The Application of : \textbf{cv::Canny()} and \textbf{cv::blur()} with certain values of the parameters:
+  \includegraphics[scale = 0.35]{images/Result_Of_Canny_With_Trackbars.PNG}\\
+  \newpage
+  \item Task2 : \\
+  Result of my edge detector for the lines of the road:
+  \includegraphics[scale = 0.35]{images/My_RoadLinesDetector.PNG}
+  \item Task3 :\\
+  Result of the application of \textbf{cv::Canny()} and \textbf{cv::blur()} as a preprocess before appling \textbf{cv::HoughLines()} :
+  \includegraphics[scale = 0.35]{images/CannyImage_ForHoughLines.PNG}
+  Application of \textbf{cv::HoughLines()} to the previous image, which translates into the original in the following two lines:
+  \includegraphics[scale = 0.35]{images/HoughLines_On_Original_Image.PNG}
+  \newpage
+  \item Task4:
+  Application of \textbf{cv::HoughLines()} in order to detect the signal in the reference image:
+  \includegraphics[scale = 0.35]{images/CannyCircles.PNG}
+  
+  
+  
+\end{itemize}
+
+\end{flushleft}
+\end{document}
