@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} %package to manage images
+\graphicspath{ {./images/} }
+\usepackage{sectsty}
+
+\sectionfont{\LARGE}
+\subsectionfont{\large}
+
+\begin{document}
+\begin{flushleft}
+\section*{Report Lab expierience 5\\ Francesco Caldivezzi \\ ID Number : 2037893}
+
+\subsection*{Experience Gained}
+In this lab I understand how to :
+\begin{itemize}
+  \item Use the function \textbf{cv::threshold()} in order to apply otsu's optimal method 
+  \item Use \textbf{cv::kmeans()} function and how to actually, apply k-means clustering on an image
+\end{itemize}
+
+\newpage
+\subsection*{Unexpected Issues}
+The main difficulties of this Lab were :
+\begin{itemize}
+  \item Task1 : the main difficulty here was to find a method for segmenting the 3 asphalt images that was able to "generalize". In order to achieve this, I have applied otsu's optimal method but with some pre and post processing.
+  \item Task2 : the main difficulty here instead was to visualize the result of the application o k-means on an image.
+  \item Task3 : again, the main difficulty as in task 1 was deciding the method to use to solve this problem. In this case I have simply apply a global threshold with some degree's of freedom in order to detect the T-shirts of the robot's players.
+\end{itemize}
+
+\newpage
+\subsection*{Results}
+In this section we talk about the experimental results :
+\begin{itemize}
+  \item Task1 : \\
+  Image 1:\\
+  \includegraphics[scale = 0.35]{images/task1_img1.PNG}\\
+  Image 2:\\
+  \includegraphics[scale = 0.35]{images/task1_img2.PNG}\\
+  Image 3:\\
+  \includegraphics[scale = 0.25]{images/task1_img3.PNG}\\
+  \item Task 2 : \\
+  Grayscale Image :\\
+  \includegraphics[scale = 0.35]{images/task2_gray.PNG}\\
+  Color Image :\\
+  \includegraphics[scale = 0.35]{images/task2_color.PNG}\\
+  \item Task 3 : \\
+  \includegraphics[scale = 0.35]{images/task3.PNG}
+  
+  
+\end{itemize}
+
+\end{flushleft}
+\end{document}
