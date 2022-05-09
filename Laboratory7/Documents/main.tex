@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} %package to manage images
+\graphicspath{ {./images/} }
+\usepackage{sectsty}
+
+\sectionfont{\LARGE}
+\subsectionfont{\large}
+
+\begin{document}
+\begin{flushleft}
+\section*{Report Lab expierience 7\\ Francesco Caldivezzi \\ ID Number : 2037893}
+
+\subsection*{Experience Gained}
+In this lab I understand how to :
+\begin{itemize}
+  \item Extract Features and Descriptors (SIFT one's) from an Image with \textbf{cv::Ptr\(<\)cv::SIFT\(>\) detector = cv::SIFT::create()} and \textbf{detector-\(>\) detectAndCompute()}
+  \item Match features between two images with \textbf{cv::Ptr<cv::BFMatcher> matcher = cv::BFMatcher::create(cv::NORM\_L2)} and \textbf{matcher-\(>\)match()}
+  
+  \item Apply a transformation to an image with \textbf{cv::warpPerspective()} function.
+  
+\end{itemize}
+
+\newpage
+\subsection*{Unexpected Issues}
+The main difficulties of this Lab were :
+\begin{itemize}
+  \item Computing the exact final size of the image stitched
+  \item Understand how to combine more two images together
+  \item One thing to notice is that, almost all dataset works well except the one called "dolomities". Here, due to some irregularities obtained during the computation of the translations matrix (i.e. \textbf{cv::warpPerspective()}) some matrices where not 100% correct.
+\end{itemize}
+
+\newpage
+\subsection*{Results}
+In this section we talk about the experimental results : (Name specified are the name of the folders containing the images)
+\end{flushleft}
+dolomites: \\
+\hspace*{-4.5cm}
+\includegraphics[scale = 0.20]{images/dolomites.PNG}\\
+data : \\
+\hspace*{-4.5cm}
+\includegraphics[scale = 0.16]{images/data.PNG}\\
+kitchen : \\
+\hspace*{-4.5cm}
+\includegraphics[scale = 0.13]{images/kitchen.PNG}\\
+dataset\_auto :\\
+\hspace*{-4.5cm}
+\includegraphics[scale = 0.09]{images/datasetAuto.PNG}\\
+dataset\_manual : \\
+\hspace*{-4.5cm}
+\includegraphics[scale = 0.09]{images/datasetManual.PNG}\\
+
+\begin{flushleft}
+Notice that all the images where created with the parameter called "ratio" equals to 10
+\end{flushleft}
+
+
+
+
+
+\end{document}
