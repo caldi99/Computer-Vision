@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} %package to manage images
+\graphicspath{ {./images/} }
+\usepackage{sectsty}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={190mm,257mm},
+ left=25mm,
+ right = 25mm,
+ top=40mm,
+ }
+
+\sectionfont{\LARGE}
+\subsectionfont{\large}
+
+\begin{document}
+\begin{flushleft}
+\section*{Report Lab expierience 8 \\ Francesco Caldivezzi \\ ID Number : 2037893}
+
+\subsection*{Experience Gained}
+In this lab I understand how to :
+\begin{itemize}
+  \item Use \textbf{cv::findChessboardCornersFunction()} and \textbf{cv::cornerSubPix()}
+  \item Use \textbf{cv::calibrateCamera()} to calibrate a camera
+  \item Use \textbf{cv::projectPoints()}
+  \item Use \textbf{cv::initUndistortRectifyMap()}
+  \item Moreover, I also understand how to compute the mean reprojection error which is computed with the following formula : \( \frac{1}{n}\sum\limits_{i=1}^n d( x_i,x_i^{'}) \) where \(  x_i\) is a projected point while \(  x_i^{'} \) is a measured point. Moreover, \(d\) is the euclidian distance i.e. distance computed with L2 norm.
+\end{itemize}
+
+
+\newpage
+\subsection*{Unexpected Issues}
+The main difficulties of this Lab were :
+\begin{itemize}
+\item Understand what \textbf{cv::initUndistortRectifyMap()} parameters I need to provide in order to make such function working correctly.
+\end{itemize}
+\newpage
+\subsection*{Results}
+In this section we talk about the experimental results
+
+\includegraphics[scale = 0.15]{images/image.png}\\
+\end{flushleft}
+
+\end{document}
